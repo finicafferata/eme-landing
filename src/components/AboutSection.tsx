@@ -2,18 +2,17 @@
 
 import Image from 'next/image'
 import { urlFor } from '@/lib/sanity/client'
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types.js'
 import { PortableText, type PortableTextBlock } from 'next-sanity'
 import { useState, useEffect } from 'react'
 
 interface AboutSectionProps {
   title?: string
   content?: PortableTextBlock[]
-  heroImage?: SanityImageSource
+  heroImage?: any
   teamMembers?: Array<{
     name: string
     role: string
-    image?: SanityImageSource
+    image?: any
     bio?: string
   }>
 }
