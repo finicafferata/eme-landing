@@ -101,6 +101,19 @@ export default function AboutSection({
                           </em>
                         ),
                       },
+                      types: {
+                        image: ({ value }: any) => (
+                          <div className="relative w-full h-[400px] md:h-[600px] my-12">
+                            <Image
+                              src={urlFor(value).width(1600).height(1200).url()}
+                              alt={value.alt || 'Content image'}
+                              fill
+                              sizes="100vw"
+                              className="object-cover"
+                            />
+                          </div>
+                        ),
+                      },
                     }}
                   />
                 </div>
