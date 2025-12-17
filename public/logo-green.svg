@@ -1,0 +1,22 @@
+<svg viewBox="0 0 540 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- E (left) -->
+  <rect x="10" y="10" width="125" height="50" fill="url(#greenGradient)"/>
+  <rect x="10" y="55" width="110" height="10" fill="url(#greenGradient)"/>
+  <rect x="10" y="100" width="125" height="50" fill="url(#greenGradient)"/>
+
+  <!-- M (diagonal bars) -->
+  <polygon points="145,10 190,150 235,10 280,150" fill="url(#greenGradient)"/>
+  <polygon points="190,10 235,150 280,10 325,150" fill="url(#greenGradient)"/>
+
+  <!-- E (right) -->
+  <rect x="405" y="10" width="125" height="50" fill="url(#greenGradient)"/>
+  <rect x="405" y="55" width="110" height="10" fill="url(#greenGradient)"/>
+  <rect x="405" y="100" width="125" height="50" fill="url(#greenGradient)"/>
+</svg>
