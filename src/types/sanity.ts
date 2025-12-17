@@ -1,5 +1,3 @@
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
-
 export interface Category {
   _id: string
   name: string
@@ -14,17 +12,17 @@ export interface Work {
   slug: {
     current: string
   }
-  thumbnail: SanityImageSource
+  thumbnail: any
   categories: Category[]
   description?: string
-  gallery?: SanityImageSource[]
+  gallery?: any[]
 }
 
 export interface Page {
   title: string
-  heroImage?: SanityImageSource
+  heroImage?: any
   content?: any[] // Portable text blocks
-  galleryImages?: SanityImageSource[]
+  galleryImages?: any[]
 }
 
 export interface ContactInfo {
@@ -34,8 +32,8 @@ export interface ContactInfo {
 }
 
 export interface SiteSettings {
-  logo?: SanityImageSource
-  homeHeroImage?: SanityImageSource
+  logo?: any
+  homeHeroImage?: any
   contactInfo: ContactInfo
   footerCTA: string
 }

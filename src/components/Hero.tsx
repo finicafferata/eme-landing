@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { urlFor } from '@/lib/sanity/client'
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 interface HeroProps {
-  image?: SanityImageSource
+  image?: any
 }
 
 export default function Hero({ image }: HeroProps) {

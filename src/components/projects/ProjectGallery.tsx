@@ -3,12 +3,11 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { urlFor } from '@/lib/sanity/client'
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 
 interface ProjectGalleryProps {
-  images: SanityImageSource[]
+  images: any[]
   projectName: string
 }
 
