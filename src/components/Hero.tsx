@@ -28,10 +28,10 @@ export default function Hero({ image }: HeroProps) {
 
       {/* Optional: Brand/Title overlay - positioned bottom-left (editorial style) */}
       <div className="absolute bottom-12 left-8 md:bottom-16 md:left-12 z-10">
-        <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+        <h1 className="text-[#fdf2e8] text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
           EME Estudio
         </h1>
-        <p className="text-white/90 text-lg md:text-xl mt-2 font-light">
+        <p className="text-[#fdf2e8]/90 text-lg md:text-xl mt-2 font-light">
           Tufting · Hand-made products
         </p>
       </div>
@@ -39,7 +39,7 @@ export default function Hero({ image }: HeroProps) {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg
-          className="w-6 h-6 text-white/70"
+          className="w-6 h-6 text-[#fdf2e8]/70"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"

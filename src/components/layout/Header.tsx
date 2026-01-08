@@ -38,7 +38,7 @@ export default function Header({ settings }: HeaderProps) {
           {/* Desktop Navigation */}
           <nav
             className={`hidden md:flex items-center text-sm lg:text-base uppercase tracking-[0.15em] transition-colors duration-300 ${
-              isScrolled ? 'text-black' : 'text-white'
+              isScrolled ? 'text-[#beb03c]' : 'text-[#fdf2e8]'
             }`}
           >
             <Link

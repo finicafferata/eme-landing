@@ -73,7 +73,7 @@ export default function HorizontalScroll({ settings }: HorizontalScrollProps) {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3">
           {/* Scroll hint text - fades out as user scrolls */}
           <div
-            className="text-white text-sm font-light transition-opacity duration-500 md:hidden"
+            className="text-text-gold text-sm font-light transition-opacity duration-500 md:hidden"
             style={{ opacity: 1 - scrollProgress }}
           >
             Scroll to explore →
@@ -83,12 +83,12 @@ export default function HorizontalScroll({ settings }: HorizontalScrollProps) {
           <div className="flex gap-2">
             <div
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                scrollProgress < 0.5 ? 'bg-white w-6' : 'bg-white/40'
+                scrollProgress < 0.5 ? 'bg-text-gold w-6' : 'bg-text-gold/40'
               }`}
             />
             <div
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                scrollProgress >= 0.5 ? 'bg-white w-6' : 'bg-white/40'
+                scrollProgress >= 0.5 ? 'bg-text-gold w-6' : 'bg-text-gold/40'
               }`}
             />
           </div>
@@ -107,12 +107,12 @@ export default function HorizontalScroll({ settings }: HorizontalScrollProps) {
                 />
               )}
               <div className="absolute bottom-8 left-8">
-                <h2 className="text-4xl md:text-6xl font-bold text-white">
-                  Turfting, hand-made products
+                <h2 className="text-4xl md:text-6xl font-bold text-text-gold">
+                  Tufting, hand-made products
                 </h2>
               </div>
               <div className="absolute bottom-8 right-8">
-                <p className="text-white text-lg">Photography, Backstage</p>
+                <p className="text-text-gold text-lg">Photography, Backstage</p>
               </div>
             </div>
           </section>
@@ -129,17 +129,17 @@ export default function HorizontalScroll({ settings }: HorizontalScrollProps) {
                     className="object-contain"
                   />
                   <div className="absolute bottom-8 left-8">
-                    <h2 className="text-4xl md:text-6xl font-bold text-white">
+                    <h2 className="text-4xl md:text-6xl font-bold text-text-gold">
                       Male & Meri
                     </h2>
                   </div>
                   <div className="absolute bottom-8 right-8">
-                    <p className="text-white text-lg">Las artistas</p>
+                    <p className="text-text-gold text-lg">Las artistas</p>
                   </div>
                 </div>
               )}
-              <div className="bg-white p-12 max-w-2xl">
-                <p className="text-dark text-lg leading-relaxed">
+              <div className="bg-background p-12 max-w-2xl">
+                <p className="text-text-gold text-lg leading-relaxed">
                   EME Estudio es un espacio de creación y experimentación textil.
                   Trabajamos con técnicas de tufting para crear alfombras y piezas
                   únicas hechas a mano con amor y dedicación.

@@ -24,7 +24,7 @@ export default function ProjectCard({ work }: ProjectCardProps) {
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-brand-violet transition-colors duration-300">
+        <h3 className="text-xl md:text-2xl font-bold text-text-gold group-hover:text-brand-violet transition-colors duration-300">
           {work.name}
         </h3>
         {work.categories && work.categories.length > 0 && (
@@ -32,7 +32,7 @@ export default function ProjectCard({ work }: ProjectCardProps) {
             {work.categories.map((category) => (
               <span
                 key={category._id}
-                className="text-sm md:text-base text-white/50"
+                className="text-sm md:text-base text-text-gold/50"
               >
                 {category.name}
               </span>

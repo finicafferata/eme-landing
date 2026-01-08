@@ -27,7 +27,7 @@ export default function MobileMenu({ isScrolled = false }: MobileMenuProps) {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`md:hidden p-2 relative z-50 transition-colors duration-300 ${
-          isScrolled ? 'text-black' : 'text-white'
+          isScrolled ? 'text-[#beb03c]' : 'text-[#fdf2e8]'
         }`}
         aria-label="Toggle menu"
       >
