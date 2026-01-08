@@ -7,7 +7,7 @@ interface FooterProps {
 
 export default function Footer({ settings }: FooterProps) {
   return (
-    <footer className="w-full bg-black min-h-screen flex flex-col items-center justify-center relative">
+    <footer className="w-full bg-background min-h-screen flex flex-col items-center justify-center relative">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 py-20 text-center">
         {/* CTA Section - Centered */}
         <div className="max-w-2xl mx-auto mb-12">
@@ -26,7 +26,7 @@ export default function Footer({ settings }: FooterProps) {
       </div>
 
       {/* Bottom Bar with Address and Links - Absolute positioned at bottom of footer */}
-      <div className="absolute bottom-0 left-0 right-0 w-full border-t border-white/10 bg-black">
+      <div className="absolute bottom-0 left-0 right-0 w-full border-t border-white/10 bg-background">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-white/50">
             {/* Address - Left */}

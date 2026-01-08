@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { urlFor } from '@/lib/sanity/client'
 import type { SiteSettings } from '@/types/sanity'
@@ -11,6 +11,7 @@ interface HorizontalScrollProps {
 
 export default function HorizontalScroll({ settings }: HorizontalScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const container = containerRef.current
@@ -27,9 +28,9 @@ export default function HorizontalScroll({ settings }: HorizontalScrollProps) {
       const end = containerTop + containerHeight
       const totalDistance = end - start
 
-      // Add delays: horizontal scroll only starts after 30% and stops at 70% (leaving 30% at end for viewing)
-      const startDelayThreshold = 0.3
-      const endDelayThreshold = 0.7
+      // Add delays: horizontal scroll only starts after 15% and stops at 85% for quicker, more responsive feel
+      const startDelayThreshold = 0.15
+      const endDelayThreshold = 0.85
       const scrollProgress = (scrolled - start) / totalDistance
 
       // Adjusted progress with delays at both start and end
@@ -48,6 +49,9 @@ export default function HorizontalScroll({ settings }: HorizontalScrollProps) {
       // Clamp between 0 and 1
       const clampedProgress = Math.max(0, Math.min(1, progress))
 
+      // Update progress state for visual indicator
+      setScrollProgress(clampedProgress)
+
       // Apply horizontal transform to inner content
       const inner = container.querySelector('.horizontal-inner') as HTMLElement
       if (inner) {
@@ -63,16 +67,41 @@ export default function HorizontalScroll({ settings }: HorizontalScrollProps) {
   }, [])
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: '800vh' }}>
+    <div ref={containerRef} className="relative" style={{ height: '300vh' }}>
       <div className="sticky top-0 h-screen overflow-hidden">
-        <div className="horizontal-inner flex h-full transition-transform duration-100 ease-out will-change-transform pl-[15vw]">
+        {/* Visual Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3">
+          {/* Scroll hint text - fades out as user scrolls */}
+          <div
+            className="text-white text-sm font-light transition-opacity duration-500 md:hidden"
+            style={{ opacity: 1 - scrollProgress }}
+          >
+            Scroll to explore →
+          </div>
+
+          {/* Progress dots */}
+          <div className="flex gap-2">
+            <div
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                scrollProgress < 0.5 ? 'bg-white w-6' : 'bg-white/40'
+              }`}
+            />
+            <div
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                scrollProgress >= 0.5 ? 'bg-white w-6' : 'bg-white/40'
+              }`}
+            />
+          </div>
+        </div>
+
+        <div className="horizontal-inner flex h-full transition-transform duration-150 ease-out will-change-transform pl-[15vw]">
           {/* Section 1: Studio Image */}
           <section className="min-w-full h-full flex items-center bg-light">
             <div className="ml-[10%] mr-[10%] relative w-full max-w-4xl h-[70vh]">
-              {settings.homeHeroImage && (
+              {settings.horizontalScrollImage1 && (
                 <Image
-                  src={urlFor(settings.homeHeroImage).width(1600).height(900).url()}
-                  alt="EME Estudio"
+                  src={urlFor(settings.horizontalScrollImage1).width(1600).height(900).url()}
+                  alt="Tufting, hand-made products"
                   fill
                   className="object-contain"
                 />
@@ -91,10 +120,10 @@ export default function HorizontalScroll({ settings }: HorizontalScrollProps) {
           {/* Section 2: About */}
           <section className="min-w-full h-full flex items-center bg-dark pr-[15vw]">
             <div className="ml-[10%] mr-[10%] relative w-full max-w-4xl">
-              {settings.homeHeroImage && (
+              {settings.horizontalScrollImage2 && (
                 <div className="relative h-[50vh] mb-8">
                   <Image
-                    src={urlFor(settings.homeHeroImage).width(1600).height(900).url()}
+                    src={urlFor(settings.horizontalScrollImage2).width(1600).height(900).url()}
                     alt="Male & Meri"
                     fill
                     className="object-contain"

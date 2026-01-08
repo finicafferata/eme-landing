@@ -11,16 +11,44 @@ export default function Hero({ image }: HeroProps) {
   }
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center py-20 md:py-32">
-      <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl aspect-[3/4]">
-        <Image
-          src={urlFor(image).width(800).height(1067).url()}
-          alt="EME Estudio"
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-          className="object-contain"
-        />
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Full viewport hero image */}
+      <Image
+        src={urlFor(image).width(2400).height(1600).url()}
+        alt="EME Estudio"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+        quality={90}
+      />
+
+      {/* Subtle gradient overlay for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+
+      {/* Optional: Brand/Title overlay - positioned bottom-left (editorial style) */}
+      <div className="absolute bottom-12 left-8 md:bottom-16 md:left-12 z-10">
+        <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+          EME Estudio
+        </h1>
+        <p className="text-white/90 text-lg md:text-xl mt-2 font-light">
+          Tufting · Hand-made products
+        </p>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg
+          className="w-6 h-6 text-white/70"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
       </div>
     </div>
   )

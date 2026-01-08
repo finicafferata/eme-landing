@@ -48,6 +48,8 @@ export const siteSettingsQuery = `
   *[_type == "siteSettings"][0] {
     logo,
     homeHeroImage,
+    horizontalScrollImage1,
+    horizontalScrollImage2,
     contactInfo,
     footerCTA
   }

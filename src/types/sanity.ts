@@ -34,6 +34,8 @@ export interface ContactInfo {
 export interface SiteSettings {
   logo?: any
   homeHeroImage?: any
+  horizontalScrollImage1?: any
+  horizontalScrollImage2?: any
   contactInfo: ContactInfo
   footerCTA: string
 }

@@ -4,7 +4,11 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export default function MobileMenu() {
+interface MobileMenuProps {
+  isScrolled?: boolean
+}
+
+export default function MobileMenu({ isScrolled = false }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
@@ -22,7 +26,9 @@ export default function MobileMenu() {
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden p-2 relative z-50"
+        className={`md:hidden p-2 relative z-50 transition-colors duration-300 ${
+          isScrolled ? 'text-black' : 'text-white'
+        }`}
         aria-label="Toggle menu"
       >
         <div className="w-6 h-5 flex flex-col justify-between">
